@@ -11,25 +11,25 @@ export default function UsersTable() {
 
   const [users, setUsers] = useState([
     {
-      id: 1,
+      id: Math.floor(Math.random()*100),
       name: "Rohan",
       age: "29",
       city: "Karwar",
     },
     {
-      id: 2,
+      id: Math.floor(Math.random()*100),
       name: "Aditya",
       age: "28",
       city: "Margao",
     },
     {
-      id: 3,
+      id: Math.floor(Math.random()*100),
       name: "Vivek",
       age: "27",
       city: "Ponda",
     },
     {
-      id: 4,
+      id: Math.floor(Math.random()*100),
       name: "Sunil",
       age: "26",
       city: "Mapsa",

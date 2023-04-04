@@ -1,11 +1,12 @@
 
 import './App.css';
-import SearchBar from './Components/SearchBar/SearchBar';
+import AddUser from './Components/AddUser/AddUser';
 import UsersTable from './Components/UsersTable/UsersTable';
 
 function App() {
   return (
     <div className="App">
+      <AddUser/>
       <UsersTable/>
     </div>
   );
