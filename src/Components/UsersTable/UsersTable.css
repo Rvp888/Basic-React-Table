@@ -35,6 +35,11 @@ tr {
 }
 
 
+.activity_cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .searchBar {
     margin-bottom: 20px;
@@ -49,5 +54,15 @@ tr {
     outline: none;
     font-size: 17px;
     background-color: rgb(197, 224, 224);   
+}
+
+.addUser-btn {
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background-color: rgb(79, 80, 80);
+    font-size: 25px;
+    padding: 5px 12px;
+    cursor: pointer;
 }
 

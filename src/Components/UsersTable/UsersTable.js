@@ -81,7 +81,12 @@ export default function UsersTable() {
   return (
     <div>
       <h1 className='table-heading'>Users Table</h1>
-      <SearchBar searchTable={searchTable} />
+
+      <div className='activity_cont'>
+        <SearchBar searchTable={searchTable} />
+        <button className='addUser-btn'>+</button>
+      </div>
+      
       <table className='usersTable'>
         <Header columns={columns} sorting={sorting} sortTable={sortTable} />
         <Content entries={searchValue ? searchedUsers : users} columns={columns} />
