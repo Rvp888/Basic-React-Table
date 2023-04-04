@@ -20,5 +20,9 @@
 }
 
 .addUser button {
-    
+    font-size: 17px;
+    padding: 5px;
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 5px;
+    margin: 10px 30px 10px 0;
 }
