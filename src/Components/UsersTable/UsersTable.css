@@ -1,0 +1,53 @@
+
+
+.table-heading {
+    text-align: center;
+    border: 2px solid #212121;
+    background-color: rgb(177, 179, 179);
+    border-radius: 30px;
+    padding: 5px 0 10px;
+    width: 18%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.usersTable {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+th {
+    background-color: rgb(79, 80, 80);
+    color: white;
+}
+
+tr {
+    background-color: rgb(177, 179, 179);
+    color: black;
+}
+
+.users-table-cell {
+    border: 1px solid #0a0a0a;
+    text-align: left;
+    padding: 8px;
+}
+
+
+
+.searchBar {
+    margin-bottom: 20px;
+}
+
+.searchBar_input {
+    width: 300px;
+    height: 35px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #717070;
+    outline: none;
+    font-size: 17px;
+    background-color: rgb(197, 224, 224);   
+}
+
