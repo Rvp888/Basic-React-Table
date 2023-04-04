@@ -70,9 +70,10 @@ export default function UsersTable() {
     setUsers(tempUsers);
   },[sorting]);
 
-  function searchTable(newSearchValue) {
-    setSearchValue(newSearchValue);
-    let filterUsers = users.filter(user => user.name.toLowerCase().includes(newSearchValue.toLowerCase()));
+  function searchTable(text) {
+    text = text.toLowerCase();
+    setSearchValue(text);
+    let filterUsers = users.filter(user => user.name.toLowerCase().includes(text) || user.id.toString().toLowerCase().includes(text) || user.age.toLowerCase().includes(text) || user.city.toLowerCase().includes(text) );
     setSearchedUsers([...filterUsers]);
   }
 
