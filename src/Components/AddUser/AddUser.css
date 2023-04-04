@@ -5,6 +5,12 @@
     border-radius: 10px;
     width: 300px;
     padding: 20px;
+    box-shadow: 0 0 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .addUser_heading {
@@ -21,8 +27,18 @@
 
 .addUser button {
     font-size: 17px;
-    padding: 5px;
+    padding: 5px 10px;
     border: 1px solid rgb(184, 182, 182);
     border-radius: 5px;
-    margin: 10px 30px 10px 0;
+    margin: 20px 30px 10px 0;
+    color: white;
+    cursor: pointer;
+}
+
+.add-btn {
+    background-color: rgb(28, 144, 28);
+}
+
+.cancel-btn {
+    background-color: rgb(247, 59, 59);
 }

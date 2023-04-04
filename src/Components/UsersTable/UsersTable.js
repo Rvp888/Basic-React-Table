@@ -9,36 +9,11 @@ import { useEffect } from 'react';
 
 export default function UsersTable(props) {
 
-  const [users, setUsers] = useState([
-    {
-      id: Math.floor(Math.random()*100),
-      name: "Rohan",
-      age: "29",
-      city: "Karwar",
-    },
-    {
-      id: Math.floor(Math.random()*100),
-      name: "Aditya",
-      age: "28",
-      city: "Margao",
-    },
-    {
-      id: Math.floor(Math.random()*100),
-      name: "Vivek",
-      age: "27",
-      city: "Ponda",
-    },
-    {
-      id: Math.floor(Math.random()*100),
-      name: "Sunil",
-      age: "26",
-      city: "Mapsa",
-    },
-  ])
   const columns = ["id", "name", "age", "city"];
   const [sorting, setSorting] = useState({column: "id", order: "asc"});
   const [searchedUsers, setSearchedUsers] = useState([]);
   const [searchValue,setSearchValue] = useState("");
+
 
   function sortTable(newSorting) {
     console.log(newSorting.order);
@@ -46,7 +21,7 @@ export default function UsersTable(props) {
   }
 
   useEffect(() => {
-    let tempUsers = [...users];
+    let tempUsers = [...props.users];
     
     if (sorting.order === "asc") {
       tempUsers.sort((a,b) => {
@@ -67,13 +42,13 @@ export default function UsersTable(props) {
       })
     }      
 
-    setUsers(tempUsers);
+    props.setUsers(tempUsers);
   },[sorting]);
 
   function searchTable(text) {
     text = text.toLowerCase();
     setSearchValue(text);
-    let filterUsers = users.filter(user => user.name.toLowerCase().includes(text) || user.id.toString().toLowerCase().includes(text) || user.age.toLowerCase().includes(text) || user.city.toLowerCase().includes(text) );
+    let filterUsers = props.users.filter(user => user.name.toLowerCase().includes(text) || user.id.toString().toLowerCase().includes(text) || user.age.toLowerCase().includes(text) || user.city.toLowerCase().includes(text) );
     setSearchedUsers([...filterUsers]);
   }
 
@@ -89,7 +64,7 @@ export default function UsersTable(props) {
       
       <table className='usersTable'>
         <Header columns={columns} sorting={sorting} sortTable={sortTable} />
-        <Content entries={searchValue ? searchedUsers : users} columns={columns} />
+        <Content entries={searchValue ? searchedUsers : props.users} columns={columns} />
       </table>
     </div>
   )
