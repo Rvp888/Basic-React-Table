@@ -7,7 +7,7 @@ import './UsersTable.css';
 import SearchBar from '../SearchBar/SearchBar';
 import { useEffect } from 'react';
 
-export default function UsersTable() {
+export default function UsersTable(props) {
 
   const [users, setUsers] = useState([
     {
@@ -84,7 +84,7 @@ export default function UsersTable() {
 
       <div className='activity_cont'>
         <SearchBar searchTable={searchTable} />
-        <button className='addUser-btn'>+</button>
+        <button className='addUser-btn' onClick={() => props.setAddUser(true)} >+</button>
       </div>
       
       <table className='usersTable'>
