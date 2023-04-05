@@ -9,28 +9,10 @@ function App() {
   const [addUser, setAddUser] = useState(false);
   const [users, setUsers] = useState([
     {
-      id: Math.floor(Math.random()*100),
+      id: Date.now(),
       name: "Rohan",
       age: "29",
       city: "Karwar",
-    },
-    {
-      id: Math.floor(Math.random()*100),
-      name: "Aditya",
-      age: "28",
-      city: "Margao",
-    },
-    {
-      id: Math.floor(Math.random()*100),
-      name: "Vivek",
-      age: "27",
-      city: "Ponda",
-    },
-    {
-      id: Math.floor(Math.random()*100),
-      name: "Sunil",
-      age: "26",
-      city: "Mapsa",
     },
   ]);
   const [userTobeEdited, setUsertTobeEdited] = useState({});
@@ -44,20 +26,27 @@ function App() {
     setUsertTobeEdited(users.filter(user => user.id === id)[0])
   }
 
-  function updateUser(user) {
+  function updateUser(id,name,age,city) {
     let temp = users.map((ele) => {
-      if(ele.id === user.id){
-        return user;
+      if(ele.id == id){
+        return {
+          id,name,age,city
+        };
       }
+      return ele;
     });
     setUsers(temp);
+  }
+
+  function deleteUser(id) {
+
   }
 
 
   return (
     <div className="App">
       { addUser ? <AddUser modalStatus={modalStatus} addNewUser={addNewUser} userTobeEdited={userTobeEdited} updateUser={updateUser} /> : <></>}
-      <UsersTable modalStatus={modalStatus} users={users} setUsers={setUsers} />
+      <UsersTable modalStatus={modalStatus} users={users} setUsers={setUsers} deleteUser={deleteUser} />
     </div>
   );
 }

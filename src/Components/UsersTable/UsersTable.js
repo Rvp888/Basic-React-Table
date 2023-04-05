@@ -59,7 +59,7 @@ export default function UsersTable(props) {
 
       <div className='activity_cont'>
         <SearchBar searchTable={searchTable} />
-        <button className='addUser-btn' onClick={() => props.setAddUser(true)} title='Add New User' >+</button>
+        <button className='addUser-btn' onClick={() => props.modalStatus(true)} title='Add New User' >+</button>
       </div>
       
       <table className='usersTable'>

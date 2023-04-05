@@ -12,16 +12,17 @@ export default function AddUser(props) {
     function handlesubmit(e) {
         e.preventDefault();
         if(props.userTobeEdited){
-            props.updateUser({
-                id: props.userTobeEdited.id,
+            console.log(props.userTobeEdited.id)
+            props.updateUser(
+                props.userTobeEdited.id,
                 name,
                 age,
                 city,
-            });
+            );
         }
         else {
             props.addNewUser({
-                id: Math.floor(Math.random() * 100),
+                id: Date.now(),
                 name,
                 age,
                 city,
