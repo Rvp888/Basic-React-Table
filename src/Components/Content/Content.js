@@ -17,7 +17,7 @@ export default function Content(props) {
                 {props.columns.map(column => {
                   if(column === 'actions'){
                       return (
-                        <td key={column} className='users-table-cell'><button className='actions_edit' onClick={() => handleEdit(true, entry.id)} >Edit</button><button className='actions_delete'>Delete</button></td>
+                        <td key={column} className='users-table-cell'><button className='actions_edit' onClick={() => handleEdit(true, entry.id)} >Edit</button><button className='actions_delete' onClick={() => props.deleteUser(entry.id)} >Delete</button></td>
                       )
                   }
                   return (
