@@ -28,7 +28,7 @@ function App() {
 
   function updateUser(id,name,age,city) {
     let temp = users.map((ele) => {
-      if(ele.id == id){
+      if(ele.id === id){
         return {
           id,name,age,city
         };
@@ -39,7 +39,8 @@ function App() {
   }
 
   function deleteUser(id) {
-
+    let temp = users.filter(user => user.id !== id);
+    setUsers(temp);
   }
 
 
