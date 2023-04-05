@@ -44,10 +44,14 @@ function App() {
     setUsertTobeEdited(users.filter(user => user.id === id)[0])
   }
 
+  function updateUser() {
+
+  }
+
 
   return (
     <div className="App">
-      { addUser ? <AddUser modalStatus={modalStatus} addNewUser={addNewUser} userTobeEdited={userTobeEdited} /> : <></>}
+      { addUser ? <AddUser modalStatus={modalStatus} addNewUser={addNewUser} userTobeEdited={userTobeEdited} updateUser={updateUser} /> : <></>}
       <UsersTable modalStatus={modalStatus} users={users} setUsers={setUsers} />
     </div>
   );
