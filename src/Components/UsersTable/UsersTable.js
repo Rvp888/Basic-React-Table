@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 export default function UsersTable(props) {
 
-  const columns = ["id", "name", "age", "city"];
+  const columns = ["id", "name", "age", "city", "actions"];
   const [sorting, setSorting] = useState({column: "id", order: "asc"});
   const [searchedUsers, setSearchedUsers] = useState([]);
   const [searchValue,setSearchValue] = useState("");
@@ -59,7 +59,7 @@ export default function UsersTable(props) {
 
       <div className='activity_cont'>
         <SearchBar searchTable={searchTable} />
-        <button className='addUser-btn' onClick={() => props.setAddUser(true)} >+</button>
+        <button className='addUser-btn' onClick={() => props.setAddUser(true)} title='Add New User' >+</button>
       </div>
       
       <table className='usersTable'>
