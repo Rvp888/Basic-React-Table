@@ -32,17 +32,23 @@ function App() {
       age: "26",
       city: "Mapsa",
     },
-  ])
+  ]);
+  const [userTobeEdited, setUsertTobeEdited] = useState({});
 
   function addNewUser(newUser) {
     setUsers((users) => [...users, newUser]);
   }
 
+  function modalStatus(status, id) {
+    setAddUser(status);
+    setUsertTobeEdited(users.filter(user => user.id === id)[0])
+  }
+
 
   return (
     <div className="App">
-      { addUser ? <AddUser setAddUser={setAddUser} addNewUser={addNewUser} /> : <></>}
-      <UsersTable setAddUser={setAddUser} users={users} setUsers={setUsers} />
+      { addUser ? <AddUser modalStatus={modalStatus} addNewUser={addNewUser} userTobeEdited={userTobeEdited} /> : <></>}
+      <UsersTable modalStatus={modalStatus} users={users} setUsers={setUsers} />
     </div>
   );
 }

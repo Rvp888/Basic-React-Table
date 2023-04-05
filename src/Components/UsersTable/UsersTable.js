@@ -64,7 +64,7 @@ export default function UsersTable(props) {
       
       <table className='usersTable'>
         <Header columns={columns} sorting={sorting} sortTable={sortTable} />
-        <Content entries={searchValue ? searchedUsers : props.users} columns={columns} />
+        <Content entries={searchValue ? searchedUsers : props.users} columns={columns} modalStatus={props.modalStatus} />
       </table>
     </div>
   )

@@ -5,9 +5,9 @@ import { useState } from 'react';
 
 export default function AddUser(props) {
 
-    const [name, setName] = useState('');
-    const [age, setAge] = useState('');
-    const [city, setCity] = useState('');
+    const [name, setName] = useState(props.userTobeEdited ? props.userTobeEdited.name : '');
+    const [age, setAge] = useState(props.userTobeEdited ? props.userTobeEdited.age : '');
+    const [city, setCity] = useState(props.userTobeEdited ? props.userTobeEdited.city : '');
 
     function handlesubmit(e) {
         e.preventDefault();
@@ -16,12 +16,13 @@ export default function AddUser(props) {
             name,
             age,
             city,
-        })
+        });
+        props.modalStatus(false);
     }
 
     return (
         <div className='addUser'>
-            <h2 className='addUser_heading'>Add User</h2>
+            <h2 className='addUser_heading'>{props.userTobeEdited ? 'Update User' : 'Add User'}</h2>
             <form className='addUser_form' onSubmit={handlesubmit}>
                 <label htmlFor='Name' className='addUser_label' >Name</label>
                 <br/>
@@ -36,7 +37,7 @@ export default function AddUser(props) {
                 <input type='text' value={city} onChange={(e) => setCity(e.target.value)} className='addUser_input' />
                 <br/>
                 <button className='add-btn'>Add</button>
-                <button className='cancel-btn' onClick={() => props.setAddUser(false)}>Cancel</button>
+                <button className='cancel-btn' onClick={() => props.modalStatus(false)}>Cancel</button>
             </form>
         </div>
     )
