@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 function App() {
 
   const [addUser, setAddUser] = useState(false);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem("users")) || []);
   const [userTobeEdited, setUsertTobeEdited] = useState({});
 
 
