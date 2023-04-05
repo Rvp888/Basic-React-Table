@@ -3,19 +3,18 @@ import { useState } from 'react';
 import './App.css';
 import AddUser from './Components/AddUser/AddUser';
 import UsersTable from './Components/UsersTable/UsersTable';
+import { useEffect } from 'react';
 
 function App() {
 
   const [addUser, setAddUser] = useState(false);
-  const [users, setUsers] = useState([
-    {
-      id: Date.now(),
-      name: "Rohan",
-      age: "29",
-      city: "Karwar",
-    },
-  ]);
+  const [users, setUsers] = useState([]);
   const [userTobeEdited, setUsertTobeEdited] = useState({});
+
+
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  },[users]);
 
   function addNewUser(newUser) {
     setUsers((users) => [...users, newUser]);
