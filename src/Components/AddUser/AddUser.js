@@ -36,7 +36,7 @@ export default function AddUser(props) {
                 <br/>
                 <input type='text' value={city} onChange={(e) => setCity(e.target.value)} className='addUser_input' />
                 <br/>
-                <button className='add-btn'>Add</button>
+                <button className='add-btn'>{props.userTobeEdited ? 'Update' : 'Add'}</button>
                 <button className='cancel-btn' onClick={() => props.modalStatus(false)}>Cancel</button>
             </form>
         </div>
