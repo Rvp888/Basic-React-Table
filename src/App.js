@@ -44,10 +44,10 @@ function App() {
     setUsertTobeEdited(users.filter(user => user.id === id)[0])
   }
 
-  function updateUser(id,name,age,city) {
-    let temp = users.map((user) => {
-      if(user.id === id){
-        return { id, name, age, city };
+  function updateUser(user) {
+    let temp = users.map((ele) => {
+      if(ele.id === user.id){
+        return user;
       }
     });
     setUsers(temp);

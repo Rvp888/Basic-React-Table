@@ -11,12 +11,23 @@ export default function AddUser(props) {
 
     function handlesubmit(e) {
         e.preventDefault();
-        props.addNewUser({
-            id: Math.floor(Math.random() * 100),
-            name,
-            age,
-            city,
-        });
+        if(props.userTobeEdited){
+            props.updateUser({
+                id: props.userTobeEdited.id,
+                name,
+                age,
+                city,
+            });
+        }
+        else {
+            props.addNewUser({
+                id: Math.floor(Math.random() * 100),
+                name,
+                age,
+                city,
+            });
+        }
+        
         props.modalStatus(false);
     }
 
